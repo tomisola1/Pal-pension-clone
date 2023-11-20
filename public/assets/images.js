@@ -22,6 +22,7 @@ import FacebookIcon from './facebook.svg'
 import TwitterIcon from './twitter.svg'
 import InstagramIcon from './instagram.svg'
 import LinkedinIcon from './linkedin.svg'
+import VisibilityIcon from "./visibility-icon.svg";
 
 
 export {
@@ -48,5 +49,6 @@ export {
     FacebookIcon,
     TwitterIcon,
     LinkedinIcon,
-    InstagramIcon
+    InstagramIcon,
+    VisibilityIcon
 } 

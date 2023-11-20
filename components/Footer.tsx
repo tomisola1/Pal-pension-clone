@@ -49,7 +49,7 @@ const Footer = () => {
                     <Image src={LinkedinIcon} alt='linkedin-icon'/>
             </Link>  
             </div>
-            <div className="text-[#3580c3] w-[50%] text-right">
+            <div className="text-[#065EAB] w-[50%] text-right">
                 <span>&copy; 2023 PAL Pensions. All Rights Reserved.</span>
             </div>
         </div>
