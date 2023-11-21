@@ -3,15 +3,15 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { VisibilityIcon } from '@/public/assets/images'
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 import Image from 'next/image'
 import React from 'react'
-import { Doughnut } from 'react-chartjs-2'
+import { Doughnut, Line } from 'react-chartjs-2'
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement);
 
 const Index = () => {
-  const data = {
+  const doughnutData = {
     labels: ['Total Contributions', 'Total Earnings', 'Total Withdrawal'],
     datasets: [
       {
@@ -26,6 +26,21 @@ const Index = () => {
       },
     ],
   };
+
+  const lineGraphData = {
+    labels: ['13 Nov 2023', '14 Nov 2023', '15 Nov 2023', '16 Nov 2023', '17 Nov 2023', '18 Nov 2023', '19 Nov 2023'],
+    datasets: [{
+      data: [6.571, 6.573, 6.572, 6.573, 6.585, 6.587, 6.588],
+      fill: {
+        target: 1,
+        below: 'rgb(24, 219, 213,0.2)'
+      },
+      borderColor: '#18dbd5',
+      tension: 0.4,
+      pointBackgroundColor: '#ef6363',
+      pointBorderColor: '#fff'
+    }]
+};
   return (
     <div className='ml-[260px] px-4'>
       <Header/>
@@ -67,7 +82,7 @@ const Index = () => {
               <p className='text-[#1f2937] font-medium'>73,093.51</p>
             </div>
           </div>
-          <div className='bg-[#d2eaff] py-5 px-6 rounded-[20px] w-[600px] flex justify-around items-center shadow'>
+          <div className='bg-[#d2eaff] py-5 px-6 rounded-[20px] w-[600px] flex justify-between items-center shadow'>
             <div className='flex flex-col'>
               <h3 className='mb-7'>
                 <b className='text-[#374151] text-base'>Transaction Summary</b>
@@ -96,11 +111,25 @@ const Index = () => {
              
             </div>
             <div>
-              <Doughnut data={data} width={262} height={262}/>
+              <Doughnut data={doughnutData} width={262} height={262}/>
             </div>
             
           </div>
-         
+        </div>
+        <div className='bg-[#e8f0fa] rounded-[8px] shadow'>
+          <div className='flex flex-col py-5 px-6 border-b-2'>
+            <b className='text-[28px] mb-2'>RSA Fund II</b>
+            <span className='text-sm text-[#374156]'>RSA Fund Price for the last 7 days</span>
+          </div>
+          <div className='p-2'>
+            <Line data={lineGraphData} width={600} height={200}/>
+          </div>
+        </div>
+        <div className='bg-white shadow rounded-[8px] '>
+          <div className='flex flex-col pt-5 px-6 border-b-2'>
+            <h1 className='text-xl mb-2 font-medium'>Transaction History</h1>
+            <hr className='bg-[#374156] my-4'/>
+          </div>
         </div>
       </div>
       <Footer/>
