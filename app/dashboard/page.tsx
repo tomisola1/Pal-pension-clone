@@ -126,9 +126,22 @@ const Index = () => {
           </div>
         </div>
         <div className='bg-white shadow rounded-[8px] '>
-          <div className='flex flex-col pt-5 px-6 border-b-2'>
-            <h1 className='text-xl mb-2 font-medium'>Transaction History</h1>
-            <hr className='bg-[#374156] my-4'/>
+          <div className='flex flex-col pt-5 px-6'>
+            <h1 className='text-xl font-medium'>Transaction History</h1>
+            <hr className='border-[#374156] my-4'/>
+          </div>
+          <div className='mb-5 flex gap-5 items-center'>
+            <div className='ml-5'>
+              <label htmlFor="" className='font-medium' >Start Date:</label>
+              <input type="date" name="" id="" className='table-filter'/>
+            </div>
+            <div>
+              <label htmlFor="" className='font-medium' >End Date:</label>
+              <input type="date" name="" id="" className='table-filter'/>
+            </div>
+            <div>
+              <button className='bg-[#03B2AD] text-white px-4 py-2 rounded-md border-black border'>Filter</button>
+            </div>
           </div>
         </div>
       </div>
